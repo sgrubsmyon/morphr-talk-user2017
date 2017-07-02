@@ -1,0 +1,160 @@
+---
+title: "Habits"
+author: John Doe
+date: March 22, 2005
+output: ioslides_presentation
+# runtime: shiny
+---
+  
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+## Experiment: Shiny App
+
+```{r, echo = FALSE}
+library(shiny)
+shinyApp(
+  
+  ui = fluidPage(
+    selectInput("region", "Region:", 
+                choices = colnames(WorldPhones)),
+    plotOutput("phonePlot")
+  ),
+  
+  server = function(input, output) {
+    output$phonePlot <- renderPlot({
+      barplot(WorldPhones[,input$region]*1000, 
+              ylab = "Number of Telephones", xlab = "Year")
+    })
+  },
+  
+  options = list(height = 500)
+)
+```
+
+## Experiment: My App
+
+```{r include = FALSE, cache = FALSE}
+library(morphr)
+```
+
+```{r, echo = FALSE}
+library(shiny)
+ui <- fluidPage(fluidRow(morphr::morphFieldOutput("morphfield")))
+server <- function(input, output, session) {
+  param_values <- list(
+    "Parameter A" = c("A1", "A2", "A3", "A4"),
+    "Parameter B" = c("B1", "B2", "B3", "B4"),
+    "Parameter C" = c("C1", "C2")
+  )
+  # Old compact format (only one column can be specifying)
+  specific_configurations <- list(
+    "Parameter A" = list(
+      "A1" = list(
+        "Parameter B" = c("B2", "B3"),
+        "Parameter C" = "C1"
+      ),
+      "A2" = list(
+        "Parameter B" = "B4",
+        "Parameter C" = "C2"
+      ),
+      "A3" = list(
+        "Parameter B" = "B1",
+        "Parameter C" = "C1"
+      ),
+      "A4" = list(
+        "Parameter B" = "B3",
+        "Parameter C" = "C2"
+      )
+    )
+  )
+
+  # OR:
+  # New extended format (arbitrary number of specifying columns, indeed no
+  # specifying columns at all, just (free) configurations)
+  configurations_new <- list(
+    # Configuration 1
+    list(
+      list(
+        param = "Parameter A",
+        value = "A1"
+      ),
+      list(
+        param = "Parameter B",
+        value = c("B2", "B3")
+      ),
+      list(
+        param = "Parameter C",
+        value = "C1"
+      )
+    ),
+    # Configuration 2
+    list(
+      list(
+        param = "Parameter A",
+        value = "A2"
+      ),
+      list(
+        param = "Parameter B",
+        value = "B4"
+      ),
+      list(
+        param = "Parameter C",
+        value = "C2"
+      )
+    ),
+    # Configuration 3
+    list(
+      list(
+        param = "Parameter A",
+        value = "A3"
+      ),
+      list(
+        param = "Parameter B",
+        value = "B1"
+      ),
+      list(
+        param = "Parameter C",
+        value = "C1"
+      )
+    ),
+    # Configuration 4
+    list(
+      list(
+        param = "Parameter A",
+        value = "A4"
+      ),
+      list(
+        param = "Parameter B",
+        value = "B3"
+      ),
+      list(
+        param = "Parameter C",
+        value = "C2"
+      )
+    )
+  )
+  morphr::installMorphField(input, output, id = "morphfield",
+                            param_values = param_values,
+                            configurations = specific_configurations,
+                            spec_columns = c("Parameter A", "Parameter C"),
+                            editable = TRUE)
+}
+shinyApp(ui = ui, server = server)
+```
