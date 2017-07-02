@@ -15,17 +15,13 @@ job: "EA European Academy of Technology and Innovation Assessment"
 output:
   ioslides_presentation:
     widescreen: true
-    css: styles.css
+    # css: styles.css
 #     logo: uni-bonn-logo.png
 #     mathjax: local
 #     self_contained: no
 #     widescreen: yes
 runtime: shiny
 ---
-
-<!-- Load fonts -->
-<link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans+Condensed:700|Raleway" rel="stylesheet">
-<!-- http://fonts.googleapis.com/css?family=Open Sans:regular,semibold,italic,italicsemibold|Inconsolata&v2 -->
 
 ## Morphological Analysis (MA)
 
@@ -99,15 +95,13 @@ runtime: shiny
 * Each column's *rows* list the possible values of the parameter
 * Parameters are by definition categorical
 
-```{r, echo=FALSE}
-data <- morphr::paramValuesToDataFrame(list(
-  "Parameter A" = c("A1", "A2", "A3", "A4"),
-  "Parameter B" = c("B1", "B2", "B3"),
-  "Parameter C" = c("C1", "C2", "C3", "C4"),
-  "Parameter D" = c("D1", "D2")
-))
-knitr::kable(data)
-```
+
+|Parameter A |Parameter B |Parameter C |Parameter D |
+|:-----------|:-----------|:-----------|:-----------|
+|A1          |B1          |C1          |D1          |
+|A2          |B2          |C2          |D2          |
+|A3          |B3          |C3          |            |
+|A4          |            |C4          |            |
 
 <!--
 
@@ -283,6 +277,7 @@ knitr::kable(data)
     </tbody>
 </table>
 
+---
 
 ## The R package `morphr`
 
@@ -295,123 +290,215 @@ knitr::kable(data)
   * Using Shiny to provide interactivity
   * A morphological field is installed using function `installMorphField()`
 
+---
 
 ## Installation
 
 Install from github using `devtools`:
 
-```{r eval=FALSE}
+
+```r
 devtools::install_github("sgrubsmyon/morphr")
 ```
 
+---
 
 ## Example usage
 
-```{r include = FALSE, cache = FALSE}
-library(morphr)
+
+
+
+```
+## 
+## Attaching package: 'shiny'
 ```
 
-```{r, echo = FALSE}
-library(shiny)
-ui <- fluidPage(fluidRow(morphr::morphFieldOutput("morphfield")))
-server <- function(input, output, session) {
-  param_values <- list(
-    "Parameter A" = c("A1", "A2", "A3", "A4"),
-    "Parameter B" = c("B1", "B2", "B3", "B4"),
-    "Parameter C" = c("C1", "C2")
-  )
-  # Old compact format (only one column can be specifying)
-  specific_configurations <- list(
-    "Parameter A" = list(
-      "A1" = list(
-        "Parameter B" = c("B2", "B3"),
-        "Parameter C" = "C1"
-      ),
-      "A2" = list(
-        "Parameter B" = "B4",
-        "Parameter C" = "C2"
-      ),
-      "A3" = list(
-        "Parameter B" = "B1",
-        "Parameter C" = "C1"
-      ),
-      "A4" = list(
-        "Parameter B" = "B3",
-        "Parameter C" = "C2"
-      )
-    )
-  )
+```
+## The following objects are masked from 'package:morphr':
+## 
+##     dataTableOutput, renderDataTable
+```
 
-  # OR:
-  # New extended format (arbitrary number of specifying columns, indeed no
-  # specifying columns at all, just (free) configurations)
-  configurations_new <- list(
-    # Configuration 1
-    list(
-      list(
-        param = "Parameter A",
-        value = "A1"
-      ),
-      list(
-        param = "Parameter B",
-        value = c("B2", "B3")
-      ),
-      list(
-        param = "Parameter C",
-        value = "C1"
-      )
-    ),
-    # Configuration 2
-    list(
-      list(
-        param = "Parameter A",
-        value = "A2"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B4"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C2"
-      )
-    ),
-    # Configuration 3
-    list(
-      list(
-        param = "Parameter A",
-        value = "A3"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B1"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C1"
-      )
-    ),
-    # Configuration 4
-    list(
-      list(
-        param = "Parameter A",
-        value = "A4"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B3"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C2"
-      )
-    )
-  )
-  morphr::installMorphField(input, output, id = "morphfield",
-                            param_values = param_values,
-                            configurations = specific_configurations,
-                            spec_columns = c("Parameter A", "Parameter C"),
-                            editable = TRUE)
-}
-shinyApp(ui = ui, server = server)
+```
+## Warning: replacing previous import by 'shiny::includeHTML' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::knit_print.shiny.tag' when
+## loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::code' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::includeScript' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::includeMarkdown' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tags' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::is.singleton' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::withTags' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::img' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tagAppendAttributes' when
+## loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::knit_print.shiny.tag.list'
+## when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::knit_print.html' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tagAppendChild' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::includeCSS' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::br' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::singleton' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::span' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::a' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tagList' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::strong' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tag' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::p' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::validateCssUnit' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::HTML' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h1' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h2' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h3' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h4' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h5' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::h6' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tagAppendChildren' when
+## loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::em' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::div' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::pre' when loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::htmlTemplate' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::suppressDependencies' when
+## loading 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::tagSetChildren' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::includeText' when loading
+## 'crosstalk'
+```
+
+```
+## Warning: replacing previous import by 'shiny::hr' when loading 'crosstalk'
+```
+
+```
+## Error in appshot.shiny.appobj(structure(list(httpHandler = function (req) : appshot of Shiny app objects is not yet supported.
 ```
