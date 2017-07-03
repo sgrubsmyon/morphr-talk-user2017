@@ -25,7 +25,6 @@ runtime: shiny
 
 <!-- Load fonts -->
 <link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans+Condensed:700|Raleway" rel="stylesheet">
-<!-- http://fonts.googleapis.com/css?family=Open Sans:regular,semibold,italic,italicsemibold|Inconsolata&v2 -->
 
 ## Morphological Analysis (MA)
 
@@ -44,7 +43,7 @@ runtime: shiny
     complexes" (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*)
 
 > * Use cases:
->   * From classifying astronomical objects via devloping jet engines to
+>   * From classifying astronomical objects via developing jet engines to
       investigating legal aspects of space colonization
 -->
 
@@ -55,41 +54,42 @@ runtime: shiny
     and `mmand`)
 
 
+<!--
 ## Why use MA?
 
 * To tackle "wicked problems" (Ritchey, 2011)
 * For "garbage detection"
-  * Remove irrelevant variables
-  * Remove inconsistent relations
+    - Remove irrelevant variables
+    - Remove inconsistent relations
 * For interactive visualization of a (qualitative) model
 
-<!--
-  * Complex and messy (multi-dimensional)
-  * Difficult to define (ambiguous)
-  * Changing all the time
-  * Everything depends on everything else
-  * "*Society*", "*people*"
-  * Non-quantifiable $\rightarrow$ mathematical modelling/simulation useless
+* Wicked problems are:
+    - Complex and messy (multi-dimensional)
+    - Difficult to define (ambiguous)
+    - Changing all the time
+    - Everything depends on everything else
+    - "*Society*", "*people*"
+    - Non-quantifiable $\rightarrow$ mathematical modelling/simulation useless
 -->
 
 
 ## Some credits
 
 <div class="pull-right" style="width: 300px; margin-left: 25px;">
-  <img style="height: 480px;" src="Zwicky.png" alt="Fritz Zwicky">
+  <img style="margin-top: -50px; height: 480px;" src="Zwicky.png" alt="Fritz Zwicky">
   <span style="font-size: 12pt;">
-  Fritz Zwicky (Source: <a href="https://www.flickr.com/photos/kevandotorg/2426466260/in/photolist-pM1yzJ-4GqgTb-5KRWpv">Kevan: Spherical Bastard</a>,
-  <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>, modified)
+  Fritz Zwicky (Source: <a style="font-size: 12pt;" href="https://www.flickr.com/photos/kevandotorg/2426466260/in/photolist-pM1yzJ-4GqgTb-5KRWpv">Kevan: Spherical Bastard</a>,
+  <a style="font-size: 12pt;" href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>, modified)
   </span>
 </div>
 
-* MA originally devloped by Swiss astrophysicist Fritz Zwicky from
+* MA originally developed by Swiss astrophysicist Fritz Zwicky from
   1940s to 1970s (Fritz Zwicky, 1948, *Morphological astronomy*)
 
-* Used and further devloped by *Swedish Morphological Society*
+* Adopted by *Swedish Morphological Society*
   (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*; http://www.swemorph.com/)
-  * Full-featured software MA/Carma™ developed since 1990s
-  * Used in consultancy work
+    - Full-featured software MA/Carma™ developed since 1990s
+    - Used in consultancy work
 
 
 ## The morphological field
@@ -126,174 +126,179 @@ knitr::kable(data)
 * With CCM, many combinations of paramater values can be excluded as inconsistent</br>
   $\rightarrow$ reduces size of problem space
 
----
 
-<table>
-    <thead>
-        <tr>
-            <td colspan="2" rowspan="2" class="off"></th>
-            <th colspan="4" class="header-span">Parameter A</th>
-            <th colspan="3" class="header-span">Parameter B</th>
-            <th colspan="4" class="header-span">Parameter C</th>
-        </tr>
-        <tr>
-            <th class="header">A1</th>
-            <th class="header">A2</th>
-            <th class="header">A3</th>
-            <th class="header">A4</th>
-            <th class="header">B1</th>
-            <th class="header">B2</th>
-            <th class="header">B3</th>
-            <th class="header">C1</th>
-            <th class="header">C2</th>
-            <th class="header">C3</th>
-            <th class="header">C4</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="3" class="header-span">Parameter B</td>
-            <td class="header">B1</td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td class="header">B2</td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td class="header">B3</td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td rowspan="4" class="header-span">Parameter C</td>
-            <td class="header">C1</td>
-            <td class="light"></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td class="header">C2</td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td class="header">C3</td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td class="header">C4</td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-            <td class="off"></td>
-        </tr>
-        <tr>
-            <td rowspan="2" class="header-span">Parameter D</td>
-            <td class="header">D1</td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="light"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-        </tr>
-        <tr>
-            <td class="header">D2</td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="dark"></td>
-            <td class="light"></td>
-            <td class="light"></td>
-            <td class="light"><i class="fa fa-check"></i></td>
-            <td class="dark"></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-            <td class="dark"><i class="fa fa-check"></i></td>
-        </tr>
-    </tbody>
+## {.smaller}
+
+```{r echo=FALSE}
+library(shiny)
+```
+
+<table class="rmdtable">
+<thead>
+<tr>
+<td colspan="2" rowspan="2" class="off"></th>
+<th colspan="4" class="header-span">Parameter A</th>
+<th colspan="3" class="header-span">Parameter B</th>
+<th colspan="4" class="header-span">Parameter C</th>
+</tr>
+<tr>
+<th class="header">A1</th>
+<th class="header">A2</th>
+<th class="header">A3</th>
+<th class="header">A4</th>
+<th class="header">B1</th>
+<th class="header">B2</th>
+<th class="header">B3</th>
+<th class="header">C1</th>
+<th class="header">C2</th>
+<th class="header">C3</th>
+<th class="header">C4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="3" class="header-span">Parameter B</td>
+<td class="header">B1</td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td class="header">B2</td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td class="header">B3</td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td rowspan="4" class="header-span">Parameter C</td>
+<td class="header">C1</td>
+<td class="light"></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td class="header">C2</td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td class="header">C3</td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td class="header">C4</td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+<td class="off"></td>
+</tr>
+<tr>
+<td rowspan="2" class="header-span">Parameter D</td>
+<td class="header">D1</td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="light"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="dark"></td>
+</tr>
+<tr>
+<td class="header">D2</td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="dark"></td>
+<td class="light"></td>
+<td class="light"></td>
+<td class="light"><i class="fa fa-check"></i></td>
+<td class="dark"></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark"><i class="fa fa-check"></i></td>
+</tr>
+</tbody>
 </table>
 
 
 ## The R package `morphr`
 
 * Goals:
-  * Make MA accessible in R
-  * Make MA software platform-independent and open source
-  * Allow use of MA on the web (e.g. for distributed teams)
+    - Make MA accessible in R
+    - Make MA software platform-independent and open source
+    - Allow use of MA on the web (e.g. for distributed teams)
 * Implementation:
-  * Based on RStudio's `DT` package (fork), i.e. using jQuery plugin *DataTables*
-  * Using Shiny to provide interactivity
-  * A morphological field is installed using function `installMorphField()`
+    - Based on RStudio's `DT` package (fork), i.e. using jQuery plugin *DataTables*
+    - Using Shiny to provide interactivity
+    - A morphological field is installed using function `installMorphField()`
 
 
 ## Installation
@@ -307,111 +312,105 @@ devtools::install_github("sgrubsmyon/morphr")
 
 ## Example usage
 
-```{r include = FALSE, cache = FALSE}
+```{r include=FALSE, cache=FALSE}
 library(morphr)
 ```
 
-```{r, echo = FALSE}
-library(shiny)
-ui <- fluidPage(fluidRow(morphr::morphFieldOutput("morphfield")))
-server <- function(input, output, session) {
-  param_values <- list(
-    "Parameter A" = c("A1", "A2", "A3", "A4"),
-    "Parameter B" = c("B1", "B2", "B3", "B4"),
-    "Parameter C" = c("C1", "C2")
-  )
-  # Old compact format (only one column can be specifying)
-  specific_configurations <- list(
-    "Parameter A" = list(
-      "A1" = list(
-        "Parameter B" = c("B2", "B3"),
-        "Parameter C" = "C1"
-      ),
-      "A2" = list(
-        "Parameter B" = "B4",
-        "Parameter C" = "C2"
-      ),
-      "A3" = list(
-        "Parameter B" = "B1",
-        "Parameter C" = "C1"
-      ),
-      "A4" = list(
-        "Parameter B" = "B3",
-        "Parameter C" = "C2"
-      )
-    )
-  )
+```{r}
+param_values <- list("Parameter A" = c("A1", "A2", "A3", "A4"),
+                     "Parameter B" = c("B1", "B2", "B3", "B4"),
+                     "Parameter C" = c("C1", "C2"))
 
-  # OR:
-  # New extended format (arbitrary number of specifying columns, indeed no
-  # specifying columns at all, just (free) configurations)
-  configurations_new <- list(
-    # Configuration 1
-    list(
-      list(
-        param = "Parameter A",
-        value = "A1"
-      ),
-      list(
-        param = "Parameter B",
-        value = c("B2", "B3")
-      ),
-      list(
-        param = "Parameter C",
-        value = "C1"
-      )
-    ),
-    # Configuration 2
-    list(
-      list(
-        param = "Parameter A",
-        value = "A2"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B4"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C2"
-      )
-    ),
-    # Configuration 3
-    list(
-      list(
-        param = "Parameter A",
-        value = "A3"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B1"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C1"
-      )
-    ),
-    # Configuration 4
-    list(
-      list(
-        param = "Parameter A",
-        value = "A4"
-      ),
-      list(
-        param = "Parameter B",
-        value = "B3"
-      ),
-      list(
-        param = "Parameter C",
-        value = "C2"
-      )
-    )
-  )
-  morphr::installMorphField(input, output, id = "morphfield",
-                            param_values = param_values,
-                            configurations = specific_configurations,
-                            spec_columns = c("Parameter A", "Parameter C"),
-                            editable = TRUE)
-}
-shinyApp(ui = ui, server = server)
+configurations <- list(list(list(param = "Parameter A", value = "A1"),
+                            list(param = "Parameter B", value = c("B2", "B3")),
+                            list(param = "Parameter C", value = "C1")),
+                       list(list(param = "Parameter A", value = "A2"),
+                            list(param = "Parameter B", value = "B4"),
+                            list(param = "Parameter C", value = "C2")),
+                       list(list(param = "Parameter A", value = "A3"),
+                            list(param = "Parameter B", value = "B1"),
+                            list(param = "Parameter C", value = "C1")),
+                       list(list(param = "Parameter A", value = "A4"),
+                            list(param = "Parameter B", value = "B3"),
+                            list(param = "Parameter C", value = "C2")))
+```
+
+## Example usage
+
+```{r, eval=FALSE}
+library(shiny)
+shinyApp(
+  ui = fluidPage(
+    fluidRow(morphr::morphFieldOutput("morphfield"))
+  ),
+  server = function(input, output, session) {
+    morphr::installMorphField(input, output, id = "morphfield",
+                              param_values = param_values,
+                              configurations = configurations)
+  }
+)
+```
+
+## Example usage
+
+```{r, echo=FALSE}
+library(shiny)
+shinyApp(
+  ui = fluidPage(
+    fluidRow(morphr::morphFieldOutput("morphfield"))
+  ),
+  server = function(input, output, session) {
+    morphr::installMorphField(input, output, id = "morphfield",
+                              param_values = param_values,
+                              configurations = configurations)
+  }
+)
+```
+
+## More complex example (fictitious)
+
+```{r, echo=FALSE}
+param_values_complex = list("PV Rooftop" = c("0%", "25%", "50%", "75%", "100%"),
+                    "PV Field" = c("0%", "25%", "50%", "75%", "100%"),
+                    "Biogas" = c("0%", "25%", "50%", "75%", "100%"),
+                    "Wind" = c("0%", "25%", "50%", "75%", "100%"),
+                    "El. Storage" = c("None", "Small capacity", "Large scale capacity"),
+                    "Heating" = c("~100% fossil", "Full use of alternatives"),
+                    "Transport" = c("~100% fossil, many big cars", "~50% fossil", "~20% fossil, fewer, smaller cars"),
+                    "GHG emissions per capita" = c(">20 t CO2eq", "15-20 t CO2eq", "10-15 t CO2eq", "5-10 t CO2eq", "0-5 t CO2eq"))
+ccm <- morphr::buildUnconstrainedCCM(param_values_complex)
+ccm[[morphr::buildHashValue("PV Rooftop", "75%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("PV Rooftop", "75%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("PV Rooftop", "75%", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("PV Rooftop", "100%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("PV Rooftop", "100%", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("PV Rooftop", "100%", "GHG emissions per capita", "10-15 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "0%", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "50%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "50%", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "75%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "75%", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", "10-15 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("El. Storage", "None", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("El. Storage", "Small capacity", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Heating", "~100% fossil", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Heating", "Full use of alternatives", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Heating", "Full use of alternatives", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Transport", "~100% fossil, many big cars", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+# ccm[[morphr::buildHashValue("Transport", "~100% fossil, many big cars", "GHG emissions per capita", "5-10 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Transport", "~50% fossil", "GHG emissions per capita", "0-5 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Transport", "~20% fossil, fewer, smaller cars", "GHG emissions per capita", ">20 t CO2eq")]] <- FALSE
+ccm[[morphr::buildHashValue("Transport", "~20% fossil, fewer, smaller cars", "GHG emissions per capita", "15-20 t CO2eq")]] <- FALSE
+shinyApp(
+  ui = fluidPage(
+    fluidRow(morphr::morphFieldOutput("morphfield_complex"))
+  ),
+  server = function(input, output, session) {
+    morphr::installMorphField(input, output, id = "morphfield_complex",
+                              param_values = param_values_complex,
+                              ccm = ccm)
+  }
+)
 ```

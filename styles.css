@@ -59,3 +59,35 @@ pre code, pre span {
 .prettyprint {
   background-color: white;
 }
+
+table.rmdtable tr > td:first-child {
+    font-weight: inherit;
+    color: inherit;
+}
+
+.highlight-first-col tr > td:first-child {
+    font-weight: 600;
+    color: #515151;
+}
+
+.off {
+    background: #FFFFFF;
+}
+.header-span {
+    background: #4778FF;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+}
+.header {
+    background: #82AAFF;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+}
+.dark {
+    background: #A8A8A8;
+}
+.light {
+    background: #E0E0E0;
+}

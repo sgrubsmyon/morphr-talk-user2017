@@ -40,7 +40,7 @@ runtime: shiny
     complexes" (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*)
 
 > * Use cases:
->   * From classifying astronomical objects via devloping jet engines to
+>   * From classifying astronomical objects via developing jet engines to
       investigating legal aspects of space colonization
 -->
 
@@ -79,10 +79,10 @@ runtime: shiny
   </span>
 </div>
 
-* MA originally devloped by Swiss astrophysicist Fritz Zwicky from
+* MA originally developed by Swiss astrophysicist Fritz Zwicky from
   1940s to 1970s (Fritz Zwicky, 1948, *Morphological astronomy*)
 
-* Used and further devloped by *Swedish Morphological Society*
+* Adopted by *Swedish Morphological Society*
   (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*; http://www.swemorph.com/)
   * Full-featured software MA/Carma™ developed since 1990s
   * Used in consultancy work
