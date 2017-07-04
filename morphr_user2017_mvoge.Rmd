@@ -367,7 +367,7 @@ shinyApp(
 )
 ```
 
-## More complex example (fictitious)
+## More complex example (made up)
 
 ```{r, echo=FALSE}
 param_values_complex = list("PV Rooftop" = c("0%", "25%", "50%", "75%", "100%"),
@@ -414,3 +414,15 @@ shinyApp(
   }
 )
 ```
+
+## Summary
+
+* `morphr` package still in early stage
+    - Started in mid-February this year
+    - Editing functionality added in June
+    - Still missing: view and edit the CCM itself
+* Hopefully, someone finds this helpful
+    - As new visualization method
+    - For structuring problems
+* Code is on https://github.com/sgrubsmyon/morphr
+* Feel free to contribute, ask questions
