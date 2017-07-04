@@ -16,7 +16,7 @@ output:
   ioslides_presentation:
     widescreen: true
     css: styles.css
-#     logo: uni-bonn-logo.png
+    logo: wort_bildmarke_rgb_01.jpg
 #     mathjax: local
 #     self_contained: no
 #     widescreen: yes
@@ -35,7 +35,6 @@ runtime: shiny
 > * "Simply an ordered way of looking at things" (Fritz Zwicky, 1948,
     *Morphological astronomy*)
 > * Very flexible and general, also called *General Morphological Analysis*
-> * Typically used in workshops with a team of subject matter experts
 
 <!--
 > * Holistic approach: "A method for structuring and investigating **the total set of
@@ -89,7 +88,8 @@ runtime: shiny
 * Adopted by *Swedish Morphological Society*
   (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*; http://www.swemorph.com/)
     - Full-featured software MA/Carma™ developed since 1990s
-    - Used in consultancy work
+    - Use it in consultancy work
+    - Workshops with a team of subject matter experts
 
 
 ## The morphological field
@@ -129,10 +129,6 @@ knitr::kable(data)
 
 ## {.smaller}
 
-```{r echo=FALSE}
-library(shiny)
-```
-
 <table class="rmdtable">
 <thead>
 <tr>
@@ -159,8 +155,8 @@ library(shiny)
 <tr>
 <td rowspan="3" class="header-span">Parameter B</td>
 <td class="header">B1</td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="dark"></td>
 <td class="off"></td>
@@ -174,8 +170,8 @@ library(shiny)
 <tr>
 <td class="header">B2</td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -189,8 +185,8 @@ library(shiny)
 <td class="header">B3</td>
 <td class="dark"></td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="off"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -203,12 +199,12 @@ library(shiny)
 <td rowspan="4" class="header-span">Parameter C</td>
 <td class="header">C1</td>
 <td class="light"></td>
-<td class="light"><i class="fa fa-check"></i></td>
-<td class="light"><i class="fa fa-check"></i></td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
 <td class="light"></td>
 <td class="dark"></td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
 <td class="off"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -216,12 +212,12 @@ library(shiny)
 </tr>
 <tr>
 <td class="header">C2</td>
-<td class="light"><i class="fa fa-check"></i></td>
-<td class="light"></td>
-<td class="light"></td>
-<td class="light"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"></td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -230,13 +226,13 @@ library(shiny)
 </tr>
 <tr>
 <td class="header">C3</td>
-<td class="light"><i class="fa fa-check"></i></td>
-<td class="light"><i class="fa fa-check"></i></td>
-<td class="light"></td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
 <td class="light"></td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="off"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -244,12 +240,12 @@ library(shiny)
 </tr>
 <tr>
 <td class="header">C4</td>
-<td class="light"><i class="fa fa-check"></i></td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
 <td class="light"></td>
 <td class="light"></td>
-<td class="light"></td>
-<td class="dark"></td>
-<td class="dark"></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="off"></td>
 <td class="off"></td>
@@ -260,30 +256,30 @@ library(shiny)
 <td rowspan="2" class="header-span">Parameter D</td>
 <td class="header">D1</td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="light"><i class="fa fa-check"></i></td>
-<td class="light"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
+<td class="light">&#x2713;</td>
+<td class="light">&#x2713;</td>
 <td class="light"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="dark"></td>
 <td class="dark"></td>
 </tr>
 <tr>
 <td class="header">D2</td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
 <td class="dark"></td>
 <td class="dark"></td>
 <td class="dark"></td>
 <td class="light"></td>
 <td class="light"></td>
-<td class="light"><i class="fa fa-check"></i></td>
+<td class="light">&#x2713;</td>
 <td class="dark"></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
-<td class="dark"><i class="fa fa-check"></i></td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
+<td class="dark">&#x2713;</td>
 </tr>
 </tbody>
 </table>
@@ -367,6 +363,30 @@ shinyApp(
 )
 ```
 
+## An editable field
+
+```{r, eval=FALSE}
+morphr::installMorphField(input, output, id = "morphfield",
+                          param_values = param_values,
+                          configurations = configurations,
+                          editable = TRUE)
+```
+
+```{r, echo=FALSE}
+library(shiny)
+shinyApp(
+  ui = fluidPage(
+    fluidRow(morphr::morphFieldOutput("morphfield"))
+  ),
+  server = function(input, output, session) {
+    morphr::installMorphField(input, output, id = "morphfield",
+                              param_values = param_values,
+                              configurations = configurations,
+                              editable = TRUE)
+  }
+)
+```
+
 ## More complex example (made up)
 
 ```{r, echo=FALSE}
@@ -375,7 +395,7 @@ param_values_complex = list("PV Rooftop" = c("0%", "25%", "50%", "75%", "100%"),
                     "Biogas" = c("0%", "25%", "50%", "75%", "100%"),
                     "Wind" = c("0%", "25%", "50%", "75%", "100%"),
                     "El. Storage" = c("None", "Small capacity", "Large scale capacity"),
-                    "Heating" = c("~100% fossil", "Full use of alternatives"),
+                    "Heating" = c("~100% fossil", "Some use of alternatives", "Full use of alternatives"),
                     "Transport" = c("~100% fossil, many big cars", "~50% fossil", "~20% fossil, fewer, smaller cars"),
                     "GHG emissions per capita" = c(">20 t CO2eq", "15-20 t CO2eq", "10-15 t CO2eq", "5-10 t CO2eq", "0-5 t CO2eq"))
 ccm <- morphr::buildUnconstrainedCCM(param_values_complex)

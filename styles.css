@@ -1,3 +1,19 @@
+/* Title slide logo: insert the actual size of the image */
+.gdbar img {
+  width: 406px !important;
+  height: 69px !important;
+}
+
+.gdbar {
+  width: 500px !important;
+  height: 85px !important;
+}
+
+/* Hide the logo in slide footer: */
+slides > slide:not(.nobackground)::before {
+    background: none;
+}
+
 /* Inspired by the old slidify (*RIP*) */
 
 html, body, div, span, applet, object, iframe, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -90,4 +106,11 @@ table.rmdtable tr > td:first-child {
 }
 .light {
     background: #E0E0E0;
+}
+
+article.smaller table td.dark, article.smaller table td.light {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 0;
+    text-align: center;
 }
