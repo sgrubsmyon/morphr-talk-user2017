@@ -20,7 +20,6 @@ output:
 #     mathjax: local
 #     self_contained: no
 #     widescreen: yes
-runtime: shiny
 ---
 
 <!-- Load fonts -->
@@ -352,19 +351,7 @@ shinyApp(
 
 ## Example usage
 
-```{r, echo=FALSE}
-library(shiny)
-shinyApp(
-  ui = fluidPage(
-    fluidRow(morphr::morphFieldOutput("morphfield"))
-  ),
-  server = function(input, output, session) {
-    morphr::installMorphField(input, output, id = "morphfield",
-                              param_values = param_values,
-                              configurations = configurations)
-  }
-)
-```
+![](example_usage.gif)
 
 ## An editable field
 
@@ -375,71 +362,11 @@ morphr::installMorphField(input, output, id = "morphfield",
                           editable = TRUE)
 ```
 
-```{r, echo=FALSE}
-library(shiny)
-shinyApp(
-  ui = fluidPage(
-    fluidRow(morphr::morphFieldOutput("morphfield"))
-  ),
-  server = function(input, output, session) {
-    morphr::installMorphField(input, output, id = "morphfield",
-                              param_values = param_values,
-                              configurations = configurations,
-                              editable = TRUE)
-  }
-)
-```
+![](an_editable_field.gif)
 
 ## More complex example (made up)
 
-```{r, echo=FALSE}
-param_values_complex = list("PV Rooftop" = c("100%", "75%", "50%", "25%", "0%"),
-                    "PV Field" = c("100%", "75%", "50%", "25%", "0%"),
-                    "Biogas" = c("100%", "75%", "50%", "25%", "0%"),
-                    "Wind" = c("100%", "75%", "50%", "25%", "0%"),
-                    "El. Storage" = c("Large scale capacity", "Small capacity", "None"),
-                    "Heating" = c("Full use of alternatives", "Some use of alternatives", "~100% fossil"),
-                    "Transport" = c("~20% fossil, fewer, smaller cars", "~50% fossil", "~100% fossil, many big cars"),
-                    "GHG emissions per capita" = c("9-12 t CO2eq", "6-9 t CO2eq", "3-6 t CO2eq", "0-3 t CO2eq"))
-ccm <- morphr::buildUnconstrainedCCM(param_values_complex)
-ccm[[morphr::buildHashValue("PV Rooftop", "75%", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("PV Rooftop", "100%", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("PV Rooftop", "100%", "GHG emissions per capita", "6-9 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "0%", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "0%", "GHG emissions per capita", "3-6 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "25%", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "50%", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "75%", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "75%", "GHG emissions per capita", "6-9 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", "6-9 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Wind", "100%", "GHG emissions per capita", "3-6 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("El. Storage", "None", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("El. Storage", "None", "GHG emissions per capita", "3-6 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("El. Storage", "Small capacity", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Heating", "~100% fossil", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Heating", "~100% fossil", "GHG emissions per capita", "3-6 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Heating", "Some use of alteratives", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Heating", "Full use of alternatives", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Heating", "Full use of alternatives", "GHG emissions per capita", "6-9 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~100% fossil, many big cars", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~100% fossil, many big cars", "GHG emissions per capita", "3-6 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~50% fossil", "GHG emissions per capita", "0-3 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~50% fossil", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~20% fossil, fewer, smaller cars", "GHG emissions per capita", "9-12 t CO2eq")]] <- FALSE
-ccm[[morphr::buildHashValue("Transport", "~20% fossil, fewer, smaller cars", "GHG emissions per capita", "6-9 t CO2eq")]] <- FALSE
-shinyApp(
-  ui = fluidPage(
-    fluidRow(morphr::morphFieldOutput("morphfield_complex"))
-  ),
-  server = function(input, output, session) {
-    morphr::installMorphField(input, output, id = "morphfield_complex",
-                              param_values = param_values_complex,
-                              ccm = ccm,
-                              spec_columns = c("GHG emissions per capita"))
-  }
-)
-```
+![](more_complex_example.gif)
 
 ## Outlook
 
