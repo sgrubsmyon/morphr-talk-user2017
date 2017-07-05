@@ -39,7 +39,7 @@ runtime: shiny
 <!--
 > * Holistic approach: "A method for structuring and investigating **the total set of
     relationships** contained in multi-dimensional, non-quantifiable, problem
-    complexes" (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*)
+    complexes" (Tom Ritchey, 2011, *Wicked Problems --- Social Messes*)
 
 > * Use cases:
 >   * From classifying astronomical objects via developing jet engines to
@@ -86,7 +86,7 @@ runtime: shiny
   1940s to 1970s (Fritz Zwicky, 1948, *Morphological astronomy*)
 
 * Adopted by *Swedish Morphological Society*
-  (Tom Ritchey, 2011, *Wicked Problems &mdash; Social Messes*; http://www.swemorph.com/)
+  (Tom Ritchey, 2011, *Wicked Problems --- Social Messes*; http://www.swemorph.com/)
     - Full-featured software MA/Carma™ developed since 1990s
     - Use it in consultancy work
     - Workshops with a team of subject matter experts
@@ -125,7 +125,10 @@ knitr::kable(data)
 * Results put into half-sided matrix (e.g. lower triangle)
 * With CCM, many combinations of paramater values can be excluded as inconsistent</br>
   $\rightarrow$ reduces size of problem space
-
+* Advantage: don't need to check all configurations:
+  $$\prod_{i=1}^N n_i,$$
+  but only value pairs:
+  $$\sum_{i=1}^{N-1} \sum_{j=i+1}^N n_i n_j.$$
 
 ## {.smaller}
 
@@ -438,7 +441,7 @@ shinyApp(
 )
 ```
 
-## Summary
+## Outlook
 
 * `morphr` package still in early stage
     - Started in mid-February this year
@@ -448,4 +451,5 @@ shinyApp(
     - As new visualization method
     - For structuring problems
 * Code is on https://github.com/sgrubsmyon/morphr
+* Slides repo: https://github.com/sgrubsmyon/morphr-talk-user2017
 * Feel free to contribute, ask questions
